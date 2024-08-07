@@ -3,6 +3,7 @@ import Count from "./components/Count";
 import Heading from "./components/Heading";
 import Card from "./components/Card";
 import HamburgerMenu from "./components/HamburgerMenu";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [startGame, setStartGame] = useState(false);
@@ -50,6 +51,7 @@ function App() {
 
   return (
     <main className="main-container">
+      <Analytics />
       <div className={wrapper}>
         {startGame && Array.from({ length: count }).map((_, index) => <Card key={index} />)}
 
